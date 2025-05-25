@@ -7264,7 +7264,7 @@ class PdfData(object):
   def _IsSlowCmdName(cls, cmd_name):
     return ('pngout' in cmd_name or 'zopflipng' in cmd_name or
             'optipng' in cmd_name or 'ect' in cmd_name or
-            'advpng' in cmd_name or 'pngwolf' in cmd_name)
+            'advpng' in cmd_name or 'pngwolf' in cmd_name or 'image_optim' in cmd_name)
 
   def _ConvertImageWithJbig2(self, image, cmd_name, cmd_pattern, obj_num,
                              color_type):
@@ -9439,6 +9439,7 @@ IMAGE_OPTIMIZER_CMD_MAP = {
     'optipng7': 'optipng %(sourcefnq)s -o7 -fix -force %(optipng_gray_flags)s-out %(targetfnq)s',  # Slowest.
     'ect': 'ECT -9 -strip %(targetfnq)s',
     'ECT': 'ECT -9 -strip %(targetfnq)s',
+    'image_optim': 'image_optim %(targetfnq)s',
     'advpng':  'advpng -z3 -f %(targetfnq)s',
     'advpng3': 'advpng -z3 -f %(targetfnq)s',
     'advpng4': 'advpng -z4 -f %(targetfnq)s',  # Slowest, this uses Zopfli.
