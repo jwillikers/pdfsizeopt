@@ -9437,7 +9437,7 @@ IMAGE_OPTIMIZER_CMD_MAP = {
     'optipng':  'optipng %(sourcefnq)s -o4 -fix -force %(optipng_gray_flags)s-out %(targetfnq)s',
     'optipng4': 'optipng %(sourcefnq)s -o4 -fix -force %(optipng_gray_flags)s-out %(targetfnq)s',
     'optipng7': 'optipng %(sourcefnq)s -o7 -fix -force %(optipng_gray_flags)s-out %(targetfnq)s',  # Slowest.
-    'ect': 'ECT -9 -strip %(targetfnq)s',
+    'ect': 'ect -9 -strip %(targetfnq)s',
     'ECT': 'ECT -9 -strip %(targetfnq)s',
     'advpng':  'advpng -z3 -f %(targetfnq)s',
     'advpng3': 'advpng -z3 -f %(targetfnq)s',
