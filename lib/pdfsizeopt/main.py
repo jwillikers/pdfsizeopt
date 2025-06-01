@@ -7264,7 +7264,8 @@ class PdfData(object):
   def _IsSlowCmdName(cls, cmd_name):
     return ('pngout' in cmd_name or 'zopflipng' in cmd_name or
             'optipng' in cmd_name or 'ect' in cmd_name or
-            'advpng' in cmd_name or 'pngwolf' in cmd_name)
+            'advpng' in cmd_name or 'pngwolf' in cmd_name or
+            'oxipng' in cmd_name or 'oxipng_ect' in cmd_name)
 
   def _ConvertImageWithJbig2(self, image, cmd_name, cmd_pattern, obj_num,
                              color_type):
@@ -9437,6 +9438,8 @@ IMAGE_OPTIMIZER_CMD_MAP = {
     'optipng':  'optipng %(sourcefnq)s -o4 -fix -force %(optipng_gray_flags)s-out %(targetfnq)s',
     'optipng4': 'optipng %(sourcefnq)s -o4 -fix -force %(optipng_gray_flags)s-out %(targetfnq)s',
     'optipng7': 'optipng %(sourcefnq)s -o7 -fix -force %(optipng_gray_flags)s-out %(targetfnq)s',  # Slowest.
+    'oxipng':  'oxipng --interlace 0 --quiet --strip all -o max -- %(targetfnq)s',
+    'oxipng_ect':  'oxipng --interlace 0 --quiet --strip all -o max -- %(targetfnq)s && ect -9 -strip --mt-deflate %(targetfnq)s',
     'ect': 'ECT -9 -strip %(targetfnq)s',
     'ECT': 'ECT -9 -strip %(targetfnq)s',
     'advpng':  'advpng -z3 -f %(targetfnq)s',
